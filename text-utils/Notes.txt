@@ -1,0 +1,9 @@
+
+Types of Components
+
+Functional Component
+Class Component
+HOC(Higher Order Component)
+Pure Component
+Controlled Component
+Uncontrolled Component

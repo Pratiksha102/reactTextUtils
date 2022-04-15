@@ -13,14 +13,24 @@ function App() {
     console.log(val.target.value);
     setData(val.target.value);
   }
+
+  const[status,setStatus]=useState(false)
   return (
     
     <>
     <div className='App'>
-      <h2>{data}</h2>
+      
       <input type="text" onChange={getData}></input>
       
+      {
+        status ? <h1> Anthony</h1>: null
+      }
+     <div>
 
+       <h3>Hello World</h3>
+       <button onClick={()=>setStatus(true)}>Hide</button>
+       <button onClick={()=>setStatus(false)}>Show</button> 
+     </div>
     </div>
     
    

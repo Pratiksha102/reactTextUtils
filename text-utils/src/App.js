@@ -7,34 +7,35 @@ import React, {useState} from 'react';
 
 function App() {
 
-  const [data,setData]=useState(null)
-  function getData(val)
-  {
-    console.log(val.target.value);
-    setData(val.target.value);
-  }
+ 
+  const[name,setName]=useState("");
+  const[tnc,setTnc]=useState("false");
 
-  const[status,setStatus]=useState(false)
+  function getFormData(e)
+  {
+    e.preventDefault();
+    console.log(name,tnc);
+  }
   return (
     
-    <>
+    
     <div className='App'>
-      
-      <input type="text" onChange={getData}></input>
-      
-      {
-        status ? <h1> Anthony</h1>: null
-      }
-     <div>
+     <form onSubmit={getFormData}>
+    <h3> Handle Form in React</h3>     
+    <input type="text" placeholder='Enter your name' value={name} onChange={(e)=>setName(e.target.value)}/><br/>
+    <select>
+     <option>Marvel Fan</option> 
+     <option>DC Fan </option>
+      </select> <br/>
 
-       <h3>Hello World</h3>
-       <button onClick={()=>setStatus(true)}>Hide</button>
-       <button onClick={()=>setStatus(false)}>Show</button> 
-     </div>
+      <input type="checkbox" onChange={(e)=>setTnc(e.target.value)}/>I accept Terms and conditions <br/>
+      <button type="submit" > Submit</button>
+
+      </form> 
     </div>
     
    
-    </>
+   
   );
 }
 

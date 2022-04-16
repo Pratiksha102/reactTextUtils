@@ -8,19 +8,15 @@ import React, {useState} from 'react';
 function App() {
 
  
-  const[name,setName]=useState("");
-  const[tnc,setTnc]=useState("false");
-
-  function getFormData(e)
+  function appdata()
   {
-    e.preventDefault();
-    console.log(name,tnc);
+    console.log("Function is being called");
   }
   return (
     
     
     <div className='App'>
-    <About></About>
+    <About abc={appdata}></About>
     </div>
     
    

@@ -20,18 +20,7 @@ function App() {
     
     
     <div className='App'>
-     <form onSubmit={getFormData}>
-    <h3> Handle Form in React</h3>     
-    <input type="text" placeholder='Enter your name' value={name} onChange={(e)=>setName(e.target.value)}/><br/>
-    <select>
-     <option>Marvel Fan</option> 
-     <option>DC Fan </option>
-      </select> <br/>
-
-      <input type="checkbox" onChange={(e)=>setTnc(e.target.value)}/>I accept Terms and conditions <br/>
-      <button type="submit" > Submit</button>
-
-      </form> 
+    <About></About>
     </div>
     
    

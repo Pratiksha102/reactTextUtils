@@ -7,16 +7,11 @@ import React, {useState} from 'react';
 
 function App() {
 
- 
-  function appdata()
-  {
-    console.log("Function is being called");
-  }
   return (
     
     
     <div className='App'>
-    <About abc={appdata}></About>
+    <h3> </h3>
     </div>
     
    

@@ -1,22 +1,33 @@
+import React, { Component }from 'react'
+import { useState } from 'react'
 
-import './App.css';
-import About from './Components/About';
-import Navbar from './Components/Navbar';
-import React, {useState} from 'react';
+export default class App extends Component {
+  constructor()
+  {
+    console.log("Constructor");
+    super();
+    this.state={
+      stick:'pratiksha'
 
+    }
+  }
 
-function App() {
+  componentDidUpdate(){
 
-  return (
-    
-    
-    <div className='App'>
-    <h3> </h3>
-    </div>
-    
+    console.log("componentdidUpdate");
+
+  }
+  render() {
+
+    console.log("render");
    
-   
-  );
+    return (
+      <div className="App">
+        <h3>Hello React {this.state.stick}</h3>
+        <button type="button" onClick={()=>this.setState({stick:'Gupta'})}></button>
+
+      </div>
+
+    )
+  }
 }
-
-export default App;

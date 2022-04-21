@@ -1,33 +1,39 @@
-import React, { Component }from 'react'
-import { useState } from 'react'
+import React from "react";
+import "./App.css";
 
-export default class App extends Component {
-  constructor()
-  {
-    console.log("Constructor");
-    super();
-    this.state={
-      stick:'pratiksha'
+export default function App() {
+  const teacher = [
+    {
+      name: "pratiksha",
+      age: "24",
+      address: [
+        { hn: "102", city: "kota" },
+        { hn: "104", city: "Bangalore" },
+      ],
+    },
+    { name: "guppu", age: "27" ,address: [
+      { hn: "102", city: "kota" },
+      { hn: "104", city: "Bangalore" },
+    ]}
+  ];
 
-    }
-  }
+  return (
+    <div className="App">
+      <h1> App Component </h1>
 
-  componentDidUpdate(){
-
-    console.log("componentdidUpdate");
-
-  }
-  render() {
-
-    console.log("render");
-   
-    return (
-      <div className="App">
-        <h3>Hello React {this.state.stick}</h3>
-        <button type="button" onClick={()=>this.setState({stick:'Gupta'})}></button>
-
-      </div>
-
-    )
-  }
+      {teacher.map((x, i) => (
+        <>
+          <h2>
+            Teahcer basic name is {x.name},{x.age},{i}
+          </h2>
+          <h3>
+            Address
+            {x.address.map((a) => (
+              <h1 key={a.hn}> city{a.city}</h1>
+            ))}
+          </h3>
+        </>
+      ))}
+    </div>
+  );
 }

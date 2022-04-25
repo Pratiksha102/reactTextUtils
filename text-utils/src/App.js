@@ -1,39 +1,30 @@
-import React from "react";
-import "./App.css";
+import React from 'react'
+import Reuse from './Components/Reuse'
+import './App.css'
 
 export default function App() {
-  const teacher = [
-    {
-      name: "pratiksha",
-      age: "24",
-      address: [
-        { hn: "102", city: "kota" },
-        { hn: "104", city: "Bangalore" },
-      ],
-    },
-    { name: "guppu", age: "27" ,address: [
-      { hn: "102", city: "kota" },
-      { hn: "104", city: "Bangalore" },
-    ]}
-  ];
 
+  const users=[
+    {name:"John",age:"24",email:"john@gmail.com"},
+    {name:"Peter",age:"28",email:"Peter@gmail.com"}
+    ]
   return (
-    <div className="App">
-      <h1> App Component </h1>
+    <div className='App'>
+      <h1>Reuse Component</h1>
+    
+      {
 
-      {teacher.map((x, i) => (
-        <>
-          <h2>
-            Teahcer basic name is {x.name},{x.age},{i}
-          </h2>
-          <h3>
-            Address
-            {x.address.map((a) => (
-              <h1 key={a.hn}> city{a.city}</h1>
-            ))}
-          </h3>
-        </>
-      ))}
-    </div>
-  );
+          users.map((data,i)=>
+          <Reuse item={data}/>
+          )
+
+
+      }
+      
+      
+      
+      
+      
+       </div>
+  )
 }

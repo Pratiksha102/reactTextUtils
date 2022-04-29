@@ -1,30 +1,18 @@
 import React from 'react'
-import Reuse from './Components/Reuse'
 import './App.css'
+import Reuse from './Components/Reuse'
 
 export default function App() {
+ function parentAlert(data)
+ {
+   alert(data);
+ }
 
-  const users=[
-    {name:"John",age:"24",email:"john@gmail.com"},
-    {name:"Peter",age:"28",email:"Peter@gmail.com"}
-    ]
   return (
     <div className='App'>
-      <h1>Reuse Component</h1>
-    
-      {
+     <h1>App</h1>
+     <Reuse alert={parentAlert}></Reuse>
 
-          users.map((data,i)=>
-          <Reuse item={data}/>
-          )
-
-
-      }
-      
-      
-      
-      
-      
-       </div>
+    </div>
   )
 }
